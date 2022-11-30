@@ -1,27 +1,48 @@
-# Bicycles
+# Angular Example using Guards and Permissions with Roles
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Example of a footer component in a shared module in an Ionic project using Angular.
 
-## Development server
+This way you can share the same footer in all ionic pages. With this solution you just have to include the following lines in every page where you want your footer after the ion-content element:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+```
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After cloning this project don't forget to:
 
-## Build
+```
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+After that:
 
-## Running unit tests
+```
+cd ionic-angular-footer
+ionic serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Enjoy!!!
 
-## Running end-to-end tests
+### Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You need a working environment with:
+* [Git](https://git-scm.com) - You can install it from https://git-scm.com/downloads.
+* [Node.js](https://nodejs.org) - Install node.js from https://nodejs.org/es/download/. It's advisable to install the LTS version.
+* [Angular](https://angular.io/) - Getting started with Angular
 
-## Further help
+## Built With
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* [Visual Studio Code](https://code.visualstudio.com/) - The Editor used in this project
+* [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+* [Angular](https://angular.io/) - Getting started with Angular
+
+## Acknowledgments
+
+* https://github.com/coderkan/ng-guard-sample. how to implement role-based access control using Angular.
+* https://github.com/AlexKhymenko/ngx-permissions. Permission and roles based access control for your angular(angular 2,4,5,6,7,8+) applications.
+* https://javascript.plainenglish.io/how-to-add-route-guard-for-angular-applications-309f3b0ca845. How to Add Route Guard for Angular Applications
+* https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A very complete template for README.md files.
