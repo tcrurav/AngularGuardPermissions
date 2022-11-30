@@ -1,6 +1,6 @@
 <ol>
   <li><a href="/home">home</a></li>
-  <!-- <li [ngxPermissionsOnly]="['ROLE_USER']">user</li>
-  <li [ngxPermissionsOnly]="['ROLE_ADMIN']">admin</li>
-  <li [ngxPermissionsOnly]="['ROLE_ADMIN', 'ROLE_USER']">user & admin</li> -->
+  <li *ngxPermissionsOnly="['ROLE_USER']"><a href="/user">user</a></li>
+  <li *ngxPermissionsOnly="['ROLE_ADMIN']"><a href="/admin">admin</a></li>
+  <li *ngxPermissionsOnly="['ROLE_ADMIN', 'ROLE_USER']"><a href="/user-and-admin">user & admin</a></li>
 </ol>

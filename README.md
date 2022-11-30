@@ -1,14 +1,6 @@
 # Angular Example using Guards and Permissions with Roles
 
-Example of a footer component in a shared module in an Ionic project using Angular.
-
-This way you can share the same footer in all ionic pages. With this solution you just have to include the following lines in every page where you want your footer after the ion-content element:
-
-```
-<ion-footer>
-  <app-footer></app-footer>
-</ion-footer>
-```
+Very simple Example of Angular project using Guards and Permissions (ngx-permissions) with Roles.
 
 ## Getting Started
 
@@ -21,8 +13,8 @@ npm install
 After that:
 
 ```
-cd ionic-angular-footer
-ionic serve
+cd bicycles
+ng serve
 ```
 
 Enjoy!!!

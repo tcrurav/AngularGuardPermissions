@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NgxPermissionsService } from 'ngx-permissions';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -10,9 +11,13 @@ export class AuthService {
 
   roleAs: string = "";
 
-  constructor() { }
+  constructor(private permissionsService: NgxPermissionsService) { }
 
   login(value: string) {
+
+    const perm: any[] = [value];
+    this.permissionsService.loadPermissions(perm);
+
     this.isLogin = true;
     this.roleAs = value;
     localStorage.setItem('STATE', 'true');
@@ -21,6 +26,10 @@ export class AuthService {
   }
 
   logout() {
+
+    const perm: any[] = [];
+    this.permissionsService.loadPermissions(perm);
+
     this.isLogin = false;
     this.roleAs = '';
     localStorage.setItem('STATE', 'false');
