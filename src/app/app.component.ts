@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxPermissionsService } from 'ngx-permissions';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,12 @@ import { NgxPermissionsService } from 'ngx-permissions';
 export class AppComponent implements OnInit {
   title = 'bicycles';
 
-  constructor(private permissionsService: NgxPermissionsService) {}
+  constructor(private permissionsService: NgxPermissionsService, 
+    private authService: AuthService) { }
 
   ngOnInit(): void {
-    const perm: any[] = [];
+    let perm = this.authService.getRole();
 
-    this.permissionsService.loadPermissions(perm);
-    
-    //  this.http.get('url').subscribe((permissions) => {
-    //    //const perm = ["ADMIN", "EDITOR"]; example of permissions
-    //    this.permissionsService.loadPermissions(permissions);
-    // })
+    this.permissionsService.loadPermissions([perm]);
   }
 }

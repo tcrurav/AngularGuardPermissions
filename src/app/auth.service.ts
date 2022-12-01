@@ -7,47 +7,34 @@ import { of } from 'rxjs';
 })
 export class AuthService {
 
-  isLogin = false;
-
-  roleAs: string = "";
-
   constructor(private permissionsService: NgxPermissionsService) { }
 
   login(value: string) {
-
     const perm: any[] = [value];
     this.permissionsService.loadPermissions(perm);
 
-    this.isLogin = true;
-    this.roleAs = value;
     localStorage.setItem('STATE', 'true');
-    localStorage.setItem('ROLE', this.roleAs);
-    return of({ success: this.isLogin, role: this.roleAs });
+    localStorage.setItem('ROLE', value);
+    return of({ success: true, role: value });
   }
 
   logout() {
-
     const perm: any[] = [];
     this.permissionsService.loadPermissions(perm);
 
-    this.isLogin = false;
-    this.roleAs = '';
     localStorage.setItem('STATE', 'false');
     localStorage.setItem('ROLE', '');
-    return of({ success: this.isLogin, role: '' });
+    return of({ success: false, role: '' });
   }
 
   isLoggedIn() {
     const loggedIn = localStorage.getItem('STATE');
-    if (loggedIn == 'true')
-      this.isLogin = true;
-    else
-      this.isLogin = false;
-    return this.isLogin;
+    return loggedIn == 'true' ? true : false;
   }
 
   getRole() {
-    this.roleAs = localStorage.getItem('ROLE') || "";
-    return this.roleAs;
+    const role = localStorage.getItem('ROLE') || "";
+    return role;
   }
+
 }

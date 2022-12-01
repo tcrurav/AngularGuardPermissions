@@ -7,8 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserAndAdminComponent } from './user-and-admin/user-and-admin.component';
-import { HeaderComponent } from './header/header/header.component';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxPermissionsModule.forRoot()
   ],
   providers: [],

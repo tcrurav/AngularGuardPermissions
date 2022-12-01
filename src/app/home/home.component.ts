@@ -13,17 +13,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  loginAsUser(){
-    this.authService.login("ROLE_USER").subscribe(response => {
-      this.router.navigateByUrl("/user");
-    });
-    
-  }
-
-  loginAsAdmin(){
-    this.authService.login("ROLE_ADMIN").subscribe(response => {
-      this.router.navigateByUrl("/admin");
-    });
-  }
 }
